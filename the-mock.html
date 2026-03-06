@@ -100,13 +100,13 @@
     </section>
 
     <script>
-      const questions = [
+      const rawQuestions = [
         "1. If f(x)=kx for 0≤x≤2 is a PDF, find k.",
         "2. If P(X=x)=kx for x=1,2,3 and total probability is 1, find k.",
         "3. A fair die is thrown. What is P(X≥4)?",
         "4. In how many ways can 4 students be selected from 10?",
-        "5. Evaluate 5P3.",
-        "6. Evaluate 6C2.",
+        "5. Evaluate 5 permutation 3",
+        "6. Evaluate 6 combination 2.",
         "7. If P(A)=0.6, P(B)=0.5 and P(A∩B)=0.3 find P(A|B).",
         "8. If mean of data {2,4,6,8} is required, what is it?",
         "9. Which chart best represents grouped data distribution?",
@@ -114,15 +114,15 @@
         "11. Find P(X=2) if PMF is P(X=x)=x/10 for x=1,2,3,4.",
         "12. If a coin is tossed twice, probability of exactly one head?",
         "13. How many permutations of the letters in 'DATA'?",
-        "14. Evaluate 7C3.",
+        "14. Evaluate 7 combination 3.",
         "15. If P(A)=0.4, P(B)=0.5 and A,B independent, find P(A∩B).",
         "16. What is the median of {3,7,9,11,13}?",
         "17. If class width is 5 and lower limit is 10, what is next class?",
         "18. A PDF f(x)=k for 0≤x≤4. Find k.",
         "19. If PMF P(X=x)=k for x=1,2,3,4 find k.",
         "20. How many ways can 3 books be arranged from 6?",
-        "21. Evaluate 8P2.",
-        "22. Evaluate 8C4.",
+        "21. Evaluate 8 permutation 2.",
+        "22. Evaluate 8 combination 4.",
         "23. If P(A|B)=0.5 and P(B)=0.4 and P(A∩B)=0.2 find P(A).",
         "24. Which measure is affected most by extreme values?",
         "25. If mean of grouped data is computed using midpoints, what method is this?",
@@ -132,6 +132,8 @@
         "29. If two events are mutually exclusive, what is P(A∩B)?",
         "30. Which distribution models number of successes in fixed trials?",
       ];
+
+      const questions = shuffleArray(rawQuestions);
 
       const options = [
         {
@@ -449,6 +451,17 @@
             localStorage.setItem("answers", JSON.stringify(answers));
           });
         });
+      }
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          // Pick a random index from 0 to i
+          const j = Math.floor(Math.random() * (i + 1));
+
+          // Swap elements at i and j
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
       }
     </script>
   </body>
