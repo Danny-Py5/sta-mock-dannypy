@@ -133,7 +133,7 @@
         "30. Which distribution models number of successes in fixed trials?",
       ];
 
-      const questions = shuffleArray(rawQuestions);
+      const questions = rawQuestions;
 
       const options = [
         {
@@ -395,7 +395,7 @@
         if (currentQuestion > 0) {
           currentQuestion -= 1;
         }
-        questionCont.innerHTML = `<p>${questions[currentQuestion]}</p>`;
+        questionCont.innerHTML = `<p style="font-size: 2rem">${questions[currentQuestion]}</p>`;
         displayMatchingOption(currentQuestion);
 
         updateButtonState();
