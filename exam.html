@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MTH 131 Mock</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: 0;
+      }
+      html {
+        font-family: monospace;
+        height: 100vh;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+      p,
+      a {
+        font-size: 1rem;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(219, 248, 255);
+        height: 100%;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 10px;
+        background-color: green;
+        transition: 0.25s;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 400px;
+        padding: 0.4rem;
+      }
+      input {
+        padding: 0.5rem;
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 90%;
+        font-size: 1rem;
+      }
+      @media screen and (max-width: 400px) {
+        body {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to MTH 131 Mock Exam</h1>
+    <p>This exam is set and powered by DANNYPY 🤯</p>
+    <p>Fill the form below and click the button to start the mock exam:</p>
+    <form id="myForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // stop default form submission
+
+          if (this.checkValidity()) {
+            // Get values from inputs
+            const name = document.getElementById("name").value;
+            const department = document.getElementById("department").value;
+
+            // Save to localStorage
+            localStorage.setItem("name", name);
+            localStorage.setItem("department", department);
+
+            // Redirect
+            window.location.href = "the-mock.html";
+          } else {
+            // If validation fails, browser will show built-in messages
+            this.reportValidity();
+          }
+        });
+    </script>
+  </body>
+</html>

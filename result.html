@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <style>
+      html {
+        font-family: monospace;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+      "
+    >
+      <h4>Mock Exam Result</h4>
+      <p id="resultText"></p>
+    </div>
+
+    <script>
+      // Retrieve result from localStorage
+      const resultData = JSON.parse(localStorage.getItem("result"));
+
+      if (resultData) {
+        document.getElementById("resultText").textContent =
+          `Your Score: ${resultData.score} / ${resultData.totalQuestions}`;
+
+        // Clear result after displaying
+        localStorage.removeItem("result");
+      } else {
+        document.getElementById("resultText").textContent =
+          "No result found. Please take the quiz first.";
+      }
+    </script>
+  </body>
+</html>
