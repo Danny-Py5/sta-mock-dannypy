@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STA 141 Mock | Welcome Page</title>
+    <title>STA 141 Mock | Welcome Page | DANNYPY</title>
 
     <style>
       * {
@@ -62,6 +62,17 @@
         width: 90%;
         font-size: 1rem;
       }
+      .disclaimer {
+        text-align: center;
+        background-color: #fee2e2;
+        color: #991b1b;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ffeeba;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
       @media screen and (max-width: 400px) {
         body {
           padding: 1rem;
@@ -73,6 +84,11 @@
     <h1>Welcome to STA 141 Mock Exam</h1>
     <p>This exam is set and powered by <b>DANNYPY</b> 🤯</p>
     <p>Fill the form below and click the button to start the mock exam:</p>
+    <div class="disclaimer">
+      Please be noted that the questions you are about to take are not from the
+      school; they are all generated to test our abilities and get us ready for
+      the exam.
+    </div>
     <form id="myForm">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required />
